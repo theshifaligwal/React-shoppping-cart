@@ -9,8 +9,7 @@ import {
   Card,
   CardFooter,
   Col,
-  Row,
-  ListGroupItem,
+  Row
 } from "reactstrap";
 
 const Cart = ({ cartItem, removeItem, buyNow }) => {
