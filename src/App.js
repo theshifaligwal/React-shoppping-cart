@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -36,7 +35,6 @@ function App() {
 
   return (
     <div className="App">
-    
       <BuyPage addInCart={addInCart} />
     </div>
   );

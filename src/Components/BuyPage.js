@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Axios  from "axios";
+import Axios from "axios";
+import CartItem from "./CartItem";
 
-import { random, commerce } from "faker";
+import { random, commerce, datatype } from "faker";
 import { Container, Col, Row } from "reactstrap";
 
 const apiKey = "INSERT_YOUR_KEY_HERE";
@@ -22,12 +23,12 @@ const BuyPage = ({ addInCart }) => {
 
     const { photos } = data;
 
-    const allProduct = photos.map((photo) => ({
-      smallImage: photo.setProduct.medium,
-      tinyImage: photo.setProduct.tiny,
+    const allProduct = photos.map(photo => ({
+      smallImage: photo.src.medium,
+      tinyImage: photo.src.tiny,
       productName: random.word(),
       productPrice: commerce.price(),
-      id: random.uuid(),
+      id: datatype.uuid(),
     }));
 
     setProduct(allProduct);
@@ -36,17 +37,19 @@ const BuyPage = ({ addInCart }) => {
   useEffect(() => {
     fetchPhotos();
   }, []);
-};
 
-return (
-  <Container fluid>
-    <h1 className="text-success text-center">Buy Page</h1>
-    <Row>
-      {product.map((product) => {
-        <span key={product.id}>{product.productName}</span>;
-      })}
-    </Row>
-  </Container>
-);
+  return (
+    <Container fluid>
+      <h1 className="text-success text-center">Buy Page</h1>
+      <Row>
+        {product.map((product) =>{
+          <Col md={4} key={product.id}>
+            <CartItem product={product} addInCart={addInCart} />
+          </Col>;
+        })}
+      </Row>
+    </Container>
+  );
+};
 
 export default BuyPage;
