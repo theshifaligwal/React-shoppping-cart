@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 
 import "./App.css";
+import { toast } from "react-toastify";
 
 function App() {
   const [cartItem, setCartItem] = useState([]);
@@ -19,6 +20,14 @@ function App() {
     }
     setCartItem([...cartItem, item]);
   };
+
+  const buyNow = () => {
+    setCartItem([])
+
+    toast("Purchase Complete",{
+      type: "success"
+    })
+  }
 
   return (
     <div className="App">
