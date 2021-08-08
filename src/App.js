@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 function App() {
   const [cartItem, setCartItem] = useState([]);
 
-  const addInCart = item => {
+  const addInCart = (item) => {
     const isAlreadyAdded = cartItem.findIndex(function (array) {
       return array.id === item.id;
     });
@@ -22,12 +22,16 @@ function App() {
   };
 
   const buyNow = () => {
-    setCartItem([])
+    setCartItem([]);
 
-    toast("Purchase Complete",{
-      type: "success"
-    })
-  }
+    toast("Purchase Complete", {
+      type: "success",
+    });
+  };
+
+  const removeItem = (item) => {
+    setCartItem(cartItem.filter((singleItem) => singleItem.id !== item.id));
+  };
 
   return (
     <div className="App">
