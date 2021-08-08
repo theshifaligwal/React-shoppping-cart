@@ -10,7 +10,7 @@ import {
   CardFooter,
   Col,
   Row,
-  ListGroupItemHeading,
+  ListGroupItem,
 } from "reactstrap";
 
 const Cart = ({ cartItem, removeItem, buyNow }) => {
