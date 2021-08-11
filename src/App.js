@@ -37,7 +37,7 @@ function App() {
 
   return (
     <Container fluid>
-      <ToastContainer>
+      <ToastContainer />
         <Row>
           <Col md="8">
             <BuyPage addInCart={addInCart} />
@@ -46,7 +46,7 @@ function App() {
             <Cart cartItem={cartItem} removeItem={removeItem} buyNow={buyNow} />
           </Col>
         </Row>
-      </ToastContainer>
+      
     </Container>
   );
 }

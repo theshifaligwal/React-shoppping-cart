@@ -23,7 +23,7 @@ const BuyPage = ({ addInCart }) => {
 
     const { photos } = data;
 
-    const allProduct = photos.map(photo => ({
+    const allProduct = photos.map((photo) => ({
       smallImage: photo.src.medium,
       tinyImage: photo.src.tiny,
       productName: random.word(),
@@ -42,10 +42,12 @@ const BuyPage = ({ addInCart }) => {
     <Container fluid>
       <h1 className="text-success text-center">Buy Page</h1>
       <Row>
-        {product.map((product) =>{
-          <Col md={4} key={product.id}>
-            <CartItem product={product} addInCart={addInCart} />
-          </Col>;
+        {product.map((product) => {
+          return (
+            <Col md={4} key={product.id}>
+              <CartItem product={product} addInCart={addInCart} />
+            </Col>
+          );
         })}
       </Row>
     </Container>

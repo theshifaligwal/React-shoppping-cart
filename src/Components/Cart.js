@@ -27,7 +27,7 @@ const Cart = ({ cartItem, removeItem, buyNow }) => {
           <ListGroupItem key={item.id}>
             <Row>
               <Col>
-                <img height={80} src={item.tinyImage} />
+                <img height={80} src={item.tinyImage} alt="Product" />
               </Col>
               <Col className="text-center">
                 <div className="text-primary">{item.productName}</div>
@@ -40,7 +40,7 @@ const Cart = ({ cartItem, removeItem, buyNow }) => {
           </ListGroupItem>
         ))}
       </ListGroup>
-      // if everything is empty
+      {/**if every thing is empty */}
       {cartItem.length >= 1 ? (
         <Card className="text-center mt-3">
           <CardHeader>Grand Total</CardHeader>
